@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Resume</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TUPApp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-50">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" asp-controller="Home" asp-action="Index">
+                    Resume Builder
+                </a>
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+                            <li class="nav-item dropdown mx-2">
+                                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Contents</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Students" asp-action="Index">Personal Details</a>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="EducationBgs" asp-action="Index">Education</a>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Trainings" asp-action="Index">Trainings</a>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Emergencies" asp-action="Index">Emergency</a>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Experiences" asp-action="Index">Experience</a>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Skills" asp-action="Index">Skills</a>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" asp-controller="Home" asp-action="Resume">My Resume</a>
+                            </li>
+                            @*<li class="nav-item mx-2">
+                                <a class="nav-link active" asp-controller="Home" asp-action="Menu">Menu</a>
+                            </li>*@
+                            @*<li class="nav-item mx-2">
+                                <a class="nav-link active" asp-area="" asp-controller="Students" asp-action="Index">Lists</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" asp-area="" asp-controller="EducationBgs" asp-action="Index">Education</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" asp-area="" asp-controller="Trainings" asp-action="Index">Trainings</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" asp-area="" asp-controller="Emergencies" asp-action="Index">Emergency</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" asp-area="" asp-controller="Experiences" asp-action="Index">Experience</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" asp-area="" asp-controller="Skills" asp-action="Index">Skills</a>
+                            </li>*@
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-light">
+        <div class="container text-center">
+            &copy; 2023 - Resume Builder - 
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

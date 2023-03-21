@@ -1,0 +1,62 @@
+﻿@model IEnumerable<TUPApp.Models.EducationBg>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Lists of Educations</h1>
+
+<p class="text-center">
+    <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" asp-action="Create">Create New</a></button>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.School)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.School)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.Firstname)
+                @Html.DisplayFor(modelItem => item.Student.Lastname)
+            </td>
+            <td>
+                <button type="button" class="btn btn-warning"><a class="text-light text-decoration-none" asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>
+                <button type="button" class="btn btn-primary"><a class="text-light text-decoration-none" asp-action="Details" asp-route-id="@item.Id">Details</a></button>
+                <button type="button" class="btn btn-danger"><a class="text-light text-decoration-none" asp-action="Delete" asp-route-id="@item.Id">Delete</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

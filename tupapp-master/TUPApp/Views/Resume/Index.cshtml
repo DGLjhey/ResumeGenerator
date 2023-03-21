@@ -1,0 +1,155 @@
+﻿@model TUPApp.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<body class="bg-secondary bg-gradient">
+    <div class="card col-lg-8 shadow-lg mt-5" style="margin-right: auto; margin-left: auto;">
+        <div class="card-body">
+            <div class="container">
+                @*Start of Header for name*@
+                <div class="row text-center justify-content-center">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-6">
+                                <h1 class="text-uppercase" style="text-align: right; ">@Model.Firstname</h1>
+                            </div>
+                            <div class="col-6">
+                                <h1 class="text-uppercase"  style="text-align: left;">@Model.Lastname</h1>
+                            </div>
+                        </div>
+                        @*<h1>@Model.Firstname</h1>
+                        <h1>@Model.Lastname</h1>*@
+                        <p class="mb-0">@Model.Address</p>
+                        <p class="mb-0">lorencejoydeguzman.24@gmail.com</p>
+                        <p class="mb-0">@Model.Contact</p>
+                    </div>
+                </div>
+                @*End of Header for name*@
+                <hr>
+                @*Start of Description section*@
+                <div class="row text-center justify-content-center">
+                    <div class="col-md-11">
+                        <h3 class="text-uppercase">Summary</h3>
+                        <p>
+                            As a highly motivated and skilled professional, I am dedicated to advancing my career by seeking opportunities
+                            with top-tier companies. With a passion for innovation and a commitment to excellence, I strive to enhance my
+                            skills and build lasting relationships within the industry. Through hard work, creativity, and a collaborative
+                            approach, I am confident in my ability to achieve success and make meaningful contributions to any organization.
+                        </p>
+                    </div>
+                </div>
+                @*End of Description section*@
+                <hr>
+                @*Start of Education section*@
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-uppercase">Education</h3>
+                        @foreach (var item in Model.EducationBgs)
+                        {
+                            <p class="mb-0"><strong>@item.School</strong></p>
+                            <div class="col-12">
+                                <ul>
+                                    <li>
+                                        <p class="mb-0">@item.Course</p>
+                                        <ul class="list-unstyled">
+                                            <li><span class="float-end text-black-50">@item.Year</span></li>
+                                            <li class="fst-italic text-black-50">Address here</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
+                @*End of Education section*@
+                <hr>
+                @*Start of Experience section*@
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-uppercase">Experience</h3>
+                        @foreach (var item in Model.Experiences)
+                        {
+                            <p class="mb-0"><strong>@item.Companyname</strong></p>
+                            <div class="col-12">
+                                <ul>
+                                    <li>
+                                        <span class="fw-bold">@item.Role</span>
+                                        <ul class="list-unstyled">
+                                            <li><span class="float-end text-black-50">@item.Year</span></li>
+                                            <li class="fst-italic text-black-50">Address here</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
+                @*End of Experience section*@
+                <hr>
+                @*Start of Training/Skills section*@
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="text-uppercase">Skills</h3>
+                        @foreach (var item in Model.Skills)
+                        {
+                            <ul class="d-flex justify-content-between mb-0">
+                                <li>@item.SkillName</li>
+                            </ul>
+                        }
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3 class="text-uppercase" style="text-align: right;">Training Attended</h3>
+                        @foreach (var item in Model.Trainings)
+                        {
+                            <p class="mb-0"><strong>@item.Trainingname</strong></p>
+                            <div class="col-12">
+                                <ul>
+                                    <li>
+                                        <ul class="list-unstyled">
+                                            <li><span class="float-end text-black-50">@item.Year</span></li>
+                                            <li class="fst-italic text-black-50">@item.Address</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
+                @*End of Training section*@
+                <hr>
+                @*Start of Emergency section*@
+                @*<div class="row text-center justify-content-center">
+                    <div class="col-md-10 text-muted">
+                        <h5 class="text-uppercase">Emergency Contact</h5>
+
+                            @foreach (var item in Model.Emergencies)
+                            {
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-uppercase mb-0" style="text-align: right; ">@item.Firstname</p>
+                                </div>
+                                <div class="col-6">
+                                    <p class="text-uppercase mb-0"  style="text-align: left; margin-left: auto;">@item.Lastname</p>
+                                </div>
+                            </div>
+                            <p class="mb-0">@item.Address</p>
+                            <p class="mb-0">@item.ContactNumber</p>
+                            }
+                            
+                            
+                        </div>
+                    </div>*@
+                </div>
+                @*End of Emergency section*@
+            </div>
+        </div>
+</body>
+
+
+
+
+
+

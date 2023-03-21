@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TUPApp.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center">Lists</h1>
+
+<p class="text-center">
+    <button type="button" class="btn btn-success"><a class="text-light text-decoration-none" asp-action="Create">Create New</a></button>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Middlename)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Middlename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+                <td>
+                    <button type="button" class="btn btn-warning"><a class="text-light text-decoration-none" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-light"></i></a></button>
+                    <button type="button" class="btn btn-primary"><a class="text-light text-decoration-none" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-view-list text-light"></i></a></button>
+                    <button type="button" class="btn btn-danger"><a class="text-light text-decoration-none" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash3 text-light"></i></a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

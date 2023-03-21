@@ -1,0 +1,32 @@
+﻿@model TUPApp.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@*<div class="text-center">
+    <img src="~/Image/terms.png" />
+</div>
+
+<div class="col-lg-8 w-50" style="margin-right: auto; margin-left: auto; margin-top: 1rem;">
+    <h1 class="text-center">Resume Builder</h1>
+    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+
+    <button type="button" class="btn btn-lg btn-outline-dark text-center">Build My resume</button>
+</div>*@
+<body style="background-color: #A1C298;">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col col-lg-4 mt-5">
+                <img src="~/Image/terms.png" />
+            </div>
+            <div class="col col-lg-8 mt-5">
+                <div class="col-lg-8 w-70" style="margin-right: auto; margin-left: auto; margin-top: 4rem;">
+                    <h1>RESUME BUILDER</h1>
+                    <p>Resume Builder is an online platform that offers a simple and effective way to create professional resumes. The website provides a user-friendly interface with customizable templates and pre-written content suggestions to help job seekers build an impressive resume quickly and easily. </p>
+                    <p>With Resume Builder, users can highlight their educational attainment, skills, experience, and trainings, and tailor their resumes to match specific job requirements.</p>
+                    <button type="button" class="btn btn-lg btn-success text-center"><a class="text-light text-decoration-none" asp-area="" asp-controller="Home" asp-action="Index">Build Resume</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
