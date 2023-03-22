@@ -12,12 +12,14 @@ public partial class Student
     public string? Middlename { get; set; }
 
     public string? Lastname { get; set; }
-    public string? Email { get; set; }
-    public string? Summary { get; set; }
 
     public string? Address { get; set; }
 
     public string? Contact { get; set; }
+
+    public string? Summary { get; set; }
+
+    public string? Email { get; set; }
 
     public virtual ICollection<EducationBg> EducationBgs { get; } = new List<EducationBg>();
 

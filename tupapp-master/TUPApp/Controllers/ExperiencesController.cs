@@ -169,7 +169,7 @@ namespace TUPApp.Controllers
             }
 
             var experience = await _context.Experiences
-                .Include(e => e.Student)
+                 .Include(e => e.Student)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (experience == null)
             {

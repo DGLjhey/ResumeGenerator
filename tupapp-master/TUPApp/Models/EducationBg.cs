@@ -17,5 +17,7 @@ public partial class EducationBg
 
     public string? Address { get; set; }
 
+    public int? YearEnd { get; set; }
+
     public virtual Student? Student { get; set; }
 }

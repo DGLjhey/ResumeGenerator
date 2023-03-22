@@ -27,8 +27,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Student)
             </th>
-
-
             <th></th>
         </tr>
     </thead>
@@ -52,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.Student.Lastname)
             </td>
             <td>
-                <button type="button" class="btn btn-warning"><a class="text-light text-decoration-none" asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>
-                <button type="button" class="btn btn-primary"><a class="text-light text-decoration-none" asp-action="Details" asp-route-id="@item.Id">Details</a></button>
-                <button type="button" class="btn btn-danger"><a class="text-light text-decoration-none" asp-action="Delete" asp-route-id="@item.Id">Delete</a></button>
+                <button type="button" class="btn btn-warning"><a class="text-light text-decoration-none" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square text-light"></i></a></button>
+                <button type="button" class="btn btn-primary"><a class="text-light text-decoration-none" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-view-list text-light"></i></a></button>
+                <button type="button" class="btn btn-danger"><a class="text-light text-decoration-none" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash3 text-light"></i></a></button>
             </td>
         </tr>
 }

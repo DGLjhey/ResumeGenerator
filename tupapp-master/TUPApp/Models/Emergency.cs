@@ -17,5 +17,7 @@ public partial class Emergency
 
     public int? StudentId { get; set; }
 
+    public string? Description { get; set; }
+
     public virtual Student? Student { get; set; }
 }

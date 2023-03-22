@@ -47,7 +47,8 @@
                 @Html.DisplayFor(modelItem => item.ContactNumber)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Student.Id)
+                @Html.DisplayFor(modelItem => item.Student.Firstname)
+                @Html.DisplayFor(modelItem => item.Student.Lastname)
             </td>
                 <td class="text-center">
                     <button type="button" class="btn btn-warning"><a class="text-light text-decoration-none" asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>

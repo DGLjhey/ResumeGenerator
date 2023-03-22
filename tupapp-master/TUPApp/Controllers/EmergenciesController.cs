@@ -47,7 +47,20 @@ namespace TUPApp.Controllers
         // GET: Emergencies/Create
         public IActionResult Create()
         {
-            ViewData["StudentId"] = new SelectList(_context.Students, "Id", "Id");
+            //ViewData["StudentId"] = new SelectList(_context.Students, "Id", "Id");
+            var dropdown = new List<Dropdown>();
+            var students = _context.Students.ToList();
+
+            foreach (var item in students)
+            {
+                dropdown.Add(new Dropdown
+                {
+                    Id = item.Id,
+                    Name = item.Firstname + " " + item.Lastname
+
+                });
+            }
+            ViewData["StudentId"] = new SelectList(dropdown, "Id", "Name");
             return View();
         }
 
@@ -81,8 +94,23 @@ namespace TUPApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["StudentId"] = new SelectList(_context.Students, "Id", "Id", emergency.StudentId);
-            return View(emergency);
+            //ViewData["StudentId"] = new SelectList(_context.Students, "Id", "Id", emergency.StudentId);
+            //return View(emergency);
+
+            var dropdown = new List<Dropdown>();
+            var students = _context.Students.Where(x => x.Id == id).ToList();
+
+            foreach (var item in students)
+            {
+                dropdown.Add(new Dropdown
+                {
+                    Id = item.Id,
+                    Name = item.Firstname + " " + item.Lastname
+
+                });
+            }
+            ViewData["StudentId"] = new SelectList(dropdown, "Id", "Name");
+            return View();
         }
 
         // POST: Emergencies/Edit/5

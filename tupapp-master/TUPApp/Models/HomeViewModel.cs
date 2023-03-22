@@ -34,6 +34,7 @@
         public string Course { get; set; }
         public string Address { get; set; }
         public int Year { get; set; }
+        public int YearEnd { get; set; }
     }
 
     public class Trainings1
